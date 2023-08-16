@@ -16,7 +16,7 @@
 
   <p id='favorite_teachers'>
     <strong>Favorite Teachers:</strong>
-    <%= user.teachers.joins(:enrollments).where(enrollments: { favorite: true }).pluck(:name).join(', ') %>
+    <%= User.favorite_teachers(user).map(&:name).join(', ') %>
   </p>
 
   <p id='classmates'>

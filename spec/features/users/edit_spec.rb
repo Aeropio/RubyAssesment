@@ -68,16 +68,16 @@ RSpec.feature 'Show Users' do
       expect(teacher_3.reload).to be_student
     end
 
-    # scenario 'when a student wants to be set as a teacher' do
-    #   visit edit_user_path(user_4)
+    scenario 'when a student wants to be set as a teacher' do
+      visit edit_user_path(user_4)
 
-    #   select('Teacher', from: 'user_kind')
-    #   click_on 'Update User'
+      select('Teacher', from: 'user_kind')
+      click_on 'Update User'
 
-    #   expect(page).not_to have_text(
-    #     "Kind can not be teacher because is studying in at least one program"
-    #   )
-    #   expect(user_4.reload).to be_teacher
-    # end
+      expect(page).not_to have_text(
+        "Kind can not be teacher because is studying in at least one program"
+      )
+      expect(user_4.reload).to be_teacher
+    end
   end
 end

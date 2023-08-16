@@ -57,6 +57,7 @@ RSpec.feature 'Show Users' do
       visit user_path(user_2)
       
       within('#favorite_teachers') do
+        puts page.body
         expect(page).to have_text("#{teacher_1.name}, #{teacher_2.name}")
         expect(page).not_to have_text("#{teacher_3.name}")
       end

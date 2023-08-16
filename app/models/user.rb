@@ -10,6 +10,11 @@ class User < ApplicationRecord
     classmates.where.not(id: user.id)
   end
   
+  def self.favorite_teachers(user)
+    teacher_ids = user.enrollments.where(favorite: true).pluck(:teacher_id)
+    User.where(id: teacher_ids)
+  end
+  
   private
 
   def teacher_kind_validation
