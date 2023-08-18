@@ -3,14 +3,14 @@
 require 'rails_helper'
 
 RSpec.feature 'Show Users' do
-  let!(:user_1) { User.create(kind: 'student', name: 'Student 1', age: 21) }
-  let!(:user_2) { User.create(kind: 'student', name: 'Student 2', age: 22) }
-  let!(:user_3) { User.create(kind: 'student', name: 'Student 3', age: 22) }
-  let!(:user_4) { User.create(kind: 'student', name: 'Student 4', age: 23) }
-  let!(:teacher_1) { User.create(kind: 'teacher', name: 'Teacher 1', age: 50) }
-  let!(:teacher_2) { User.create(kind: 'teacher', name: 'Teacher 2', age: 60) }
-  let!(:teacher_3) { User.create(kind: 'teacher', name: 'Teacher 3', age: 60) }
-  let!(:teacher_student) { User.create(kind: 'student_and_teacher', name: 'Student and Teacher', age: 40) }
+  let!(:user_1) { User.create(kind: 0, name: 'Student 1', age: 21) }
+  let!(:user_2) { User.create(kind: 0, name: 'Student 2', age: 22) }
+  let!(:user_3) { User.create(kind: 0, name: 'Student 3', age: 22) }
+  let!(:user_4) { User.create(kind: 0, name: 'Student 4', age: 23) }
+  let!(:teacher_1) { User.create(kind: 1, name: 'Teacher 1', age: 50) }
+  let!(:teacher_2) { User.create(kind: 1, name: 'Teacher 2', age: 60) }
+  let!(:teacher_3) { User.create(kind: 1, name: 'Teacher 3', age: 60) }
+  let!(:teacher_student) { User.create(kind: 2, name: 'Student and Teacher', age: 40) }
   let!(:program_1) { Program.create(name: 'AI is going to destroy the world') }
   let!(:program_2) { Program.create(name: 'Wall Street for dummies') }
   let!(:program_3) { Program.create(name: 'How to be a millionaire') }
