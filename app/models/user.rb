@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :enrollments, foreign_key: :user_id
   has_many :teachers, through: :enrollments, source: :teacher
+  # user - three types
   enum kind: { student: 0, teacher: 1, student_and_teacher: 2 }
   validate :teacher_kind_validation, :student_kind_validation
   
